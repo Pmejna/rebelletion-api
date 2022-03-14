@@ -1,4 +1,4 @@
-import { UserInterface } from "src/interfaces/iuser";
+import { UserInterface } from "src/interfaces/iUser";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('users')
@@ -25,4 +25,8 @@ export class UserEntity implements UserInterface {
     user_email: string;
     @Column()
     user_password: string;
+    @Column()
+    user_created_datetime: Date;
+    @Column()
+    user_updated_datetime: Date;
 }

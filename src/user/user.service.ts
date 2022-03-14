@@ -18,4 +18,6 @@ export class UserService {
     async create(data): Promise<UserEntity> {
         return this.userRepository.save(data)
     }
+
+    async
 }

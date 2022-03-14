@@ -10,4 +10,6 @@ export interface UserInterface {
     user_address_line2: string;
     user_email: string;
     user_password: string;
+    user_created_datetime: Date;
+    user_updated_datetime: Date;
 }

@@ -21,4 +21,9 @@ export class AuthController {
             user_password: hashedPass,
         })
     }
+
+    @Post('login')
+    async login(@Body() body) {
+        return this.userService.login(body);
+    }
 }
