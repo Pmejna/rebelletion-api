@@ -12,4 +12,5 @@ export class UserController {
     async all(): Promise<UserEntity[]> {
         return this.userService.all();
     }
+    
 }

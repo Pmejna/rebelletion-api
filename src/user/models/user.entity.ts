@@ -1,11 +1,11 @@
 import { UserInterface } from "src/interfaces/iUser";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('users')
 export class UserEntity implements UserInterface {
     @PrimaryGeneratedColumn()
     user_id: number;
-    @Column({unique: true})
+    @Column({unique: true, nullable: true})
     user_username: string;
     @Column({default: ''})
     user_first_name: string;
@@ -25,8 +25,8 @@ export class UserEntity implements UserInterface {
     user_email: string;
     @Column()
     user_password: string;
-    @Column()
+    @CreateDateColumn({ type: 'timestamptz' })
     user_created_datetime: Date;
-    @Column()
+    @UpdateDateColumn({ type: 'timestamptz' })
     user_updated_datetime: Date;
 }
